@@ -392,16 +392,43 @@ class Unmined {
                 geometry: new ol.geom.Point(ol.proj.transform([longitude, latitude], this.dataProjection, this.viewProjection))
             });
     
-            var style = new ol.style.Style();
-            if (item.image)
-                style.setImage(new ol.style.Icon({
+            // Create styles array for potential multi-style features
+            var styles = [];
+    
+            // Handle image if present
+            var mainStyle = new ol.style.Style();
+            if (item.image) {
+                mainStyle.setImage(new ol.style.Icon({
                     src: item.image,
                     anchor: item.imageAnchor,
                     scale: item.imageScale
                 }));
+            }
     
+            // Handle text - with or without drop shadow
             if (item.text) {
-                style.setText(new ol.style.Text({
+                // If drop shadow is requested, add it as the FIRST style (so it's rendered underneath)
+                if (item.dropShadowColor) {
+                    var shadowStyle = new ol.style.Style({
+                        text: new ol.style.Text({
+                            text: item.text,
+                            font: item.font,
+                            offsetX: item.offsetX,
+                            offsetY: (item.offsetY || 0) + 3, // 2px down for shadow
+                            fill: new ol.style.Fill({
+                                color: item.dropShadowColor
+                            }),
+                            scale: 1.02, // Slightly larger shadow
+                            padding: item.textPadding ?? [2, 4, 2, 4],
+                        })
+                    });
+                    
+                    // Add shadow style FIRST to ensure it's rendered behind main text
+                    styles.push(shadowStyle);
+                }
+                
+                // Add main text style (always added, with or without shadow)
+                mainStyle.setText(new ol.style.Text({
                     text: item.text,
                     font: item.font,
                     offsetX: item.offsetX,
@@ -423,13 +450,17 @@ class Unmined {
                     }) : null,
                 }));
             }
-    
-            feature.setStyle(style);
             
+            // Add main style AFTER any shadow
+            styles.push(mainStyle);
             
-            feature.set('originalStyle', style);
+            // Set the feature style
+            feature.setStyle(styles);
             
+            // Store original styles for zoom visibility
+            feature.set('originalStyle', styles);
             
+            // Handle zoom levels
             if (item.minZoom !== undefined) {
                 feature.set('minZoom', item.minZoom);
             }
@@ -617,10 +648,10 @@ class Unmined {
         });
         contextmenu.on('open', (evt) => {
             const coordinates = ol.proj.transform(this.olMap.getEventCoordinate(evt.originalEvent), this.viewProjection, this.dataProjection);
-
+    
             coordinates[0] = Math.round(coordinates[0]);
             coordinates[1] = Math.round(coordinates[1]);
-
+    
             contextmenu.clear();
             contextmenu.push({
                 text: `Copy /tp ${coordinates[0]} ~ ${coordinates[1]}`,
@@ -629,7 +660,7 @@ class Unmined {
                 }
             })
             contextmenu.push('-');
-
+    
             contextmenu.push({
                 text: `Place red dot marker here`,
                 classname: 'menuitem-reddot',
@@ -652,7 +683,21 @@ class Unmined {
                 });
             }
             contextmenu.push('-');
-
+    
+            // Add language toggle options with flag icons
+            const currentLanguage = window.currentLanguage || 'en';
+            contextmenu.push({
+                classname: currentLanguage === 'en' ? 'menuitem-checked' : 'menuitem-unchecked',
+                text: '🇺🇸 English',
+                callback: () => this.setLanguage('en')
+            });
+            contextmenu.push({
+                classname: currentLanguage === 'ja' ? 'menuitem-checked' : 'menuitem-unchecked',
+                text: '🇯🇵 日本語',
+                callback: () => this.setLanguage('ja')
+            });
+            contextmenu.push('-');
+    
             if (this.playerMarkersLayer) {
                 contextmenu.push(
                     {
@@ -661,7 +706,7 @@ class Unmined {
                         callback: () => this.togglePlayers()
                     })
             }
-
+    
             if (this.markersLayer) {
                 contextmenu.push(
                     {
@@ -670,12 +715,11 @@ class Unmined {
                         callback: () => this.toggleMarkers()
                     })
             }
-
-
+    
             if (this.markersLayer || this.playerMarkersLayer) {
                 contextmenu.push('-');
             }
-
+    
             if (this.#options.enableGrid) {
                 contextmenu.push(
                     {
@@ -696,17 +740,45 @@ class Unmined {
                         callback: () => this.toggleBinaryGrid()
                     })
             }
-
+    
             contextmenu.push(
                 {
                     classname: this.#options.showScaleBar ? 'menuitem-checked' : 'menuitem-unchecked',
                     text: 'Show scalebar',
                     callback: () => this.toggleScaleBar()
                 })
-
-
         })
         return contextmenu;
+    }
+    
+    // Add a new method to handle language change
+    setLanguage(language) {
+        window.currentLanguage = language;
+        
+        // Update the button with the appropriate flag
+        const languageToggleBtn = document.getElementById('language-toggle');
+        if (languageToggleBtn) {
+            languageToggleBtn.textContent = language === 'en' ? '🇺🇸' : '🇯🇵';
+        }
+        
+        // Update markers based on selected language
+        UnminedCustomMarkers.markers = UnminedCustomMarkers.generateMarkers(language);
+        
+        // Refresh the map with new markers
+        if (this.markersLayer) {
+            this.olMap.removeLayer(this.markersLayer);
+            this.markersLayer = this.createMarkersLayer(UnminedCustomMarkers.markers);
+            this.olMap.addLayer(this.markersLayer);
+            this.updateMarkersLayer();
+        }
+        
+        // Show notification about language change
+        Unmined.toast(language === 'en' ? "Changed to English" : "日本語に変更しました");
+        
+        // Store language preference
+        if (typeof localStorage !== 'undefined') {
+            localStorage.setItem('mapLanguage', language);
+        }
     }
 
     toggleGridInterval() {

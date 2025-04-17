@@ -18,7 +18,7 @@ Marker format:
         image: marker image URL to display (in quotes),
         imageScale: scale of the image (e.g. 1 = display full size, 0.5 = display half size),
         imageAnchor: [0.5, 1] means the tip of the pin is at the center-bottom of the image (see OpenLayers documentation for more info),
-        text: marker text do display (in quotes),
+        english: marker text do display (in quotes),
         textColor: text color in HTML/CSS format (in quotes),
         offsetX: horizontal pixel offset of the text,
         offsetY: vertical pixel offset of the text,
@@ -34,13 +34,19 @@ Things to keep in mind:
 You can use https://mapmarker.io/editor to generate custom pin images.
 Use the imageScale property if the pin image is too large.
 
+
+Zoom level info
+defualt is 0
+zoomout max is -6 low detail
+zoomin max is 3 high detail
+
 */
 
 UnminedCustomMarkers = {
 
     isEnabled: true,
 
-    markers: [
+    markersData: [
 
         // Example 1: Simple marker
         //{
@@ -58,7 +64,7 @@ UnminedCustomMarkers = {
         //    image: "custom.pin.png",
         //    imageAnchor: [0.5, 1],
         //    imageScale: 0.5,
-        //    text: "Marker with text",
+        //    english: "Marker with text",
         //    textColor: "red", 
         //    offsetX: 0,
         //    offsetY: 20,
@@ -69,7 +75,7 @@ UnminedCustomMarkers = {
         //{
         //    x: 200,
         //    z: 200,
-        //    text: "Text only", 
+        //    english: "Text only", 
         //    textColor: "yellow", 
         //    offsetX: 0,
         //    offsetY: 0, 
@@ -198,21 +204,12 @@ UnminedCustomMarkers = {
         {
             x: -97,
             z: 142,
-            text: "Silverton", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 32px Verdana,sans serif",
-            minZoom:-2,
-            maxZoom: 1,
-        },
-        {
-            x: -97,
-            z: 142,
             image: "silverton.pin.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.1,
-            text: "Silverton",
+            english: "Silverton",
+            japanese: "シルバートン",
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: 20,
@@ -220,37 +217,21 @@ UnminedCustomMarkers = {
             minZoom: -2,
             maxZoom: 1,
         },
-
-        {
-            x: -533,
-            z: 569,
-            text: "Charo's Castle", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 22px Verdana,sans serif",
-        },
         {
             x: -533,
             z: 569,
             image: "castle.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.08,
-            text: "Charo's Castle",
+            english: "Charo's Castle",
+            japanese: "ちゃろの城",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 20px Verdana,sans serif",
-        },
-
-        {
-            x: -270,
-            z: 527,
-            text: "Rianu & Geo", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 22px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         {
             x: -270,
@@ -258,21 +239,15 @@ UnminedCustomMarkers = {
             image: "base.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.08,
-            text: "Rianu & Geo",
+            english: "Rianu & Geo",
+            japanese: "りあぬとGeo",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 20px Verdana,sans serif",
-        },
-
-        {
-            x: -746,
-            z: 878,
-            text: "Air's Castle", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 22px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         {
             x: -746,
@@ -280,21 +255,15 @@ UnminedCustomMarkers = {
             image: "castle.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.08,
-            text: "Air's Castle",
+            english: "Air's Castle",
+            japanese: "エアーの城",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 20px Verdana,sans serif",
-        },
-
-        {
-            x: -1002,
-            z: 667,
-            text: "Sekisui Town", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 22px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         {
             x: -1002,
@@ -302,21 +271,15 @@ UnminedCustomMarkers = {
             image: "city.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.08,
-            text: "Sekisui Town",
+            english: "Sekisui Town",
+            japanese: "セキスイタウン",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 20px Verdana,sans serif",
-        },
-
-        {
-            x: -1063,
-            z: 711,
-            text: "Sekisui Zoo", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 22px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         {
             x: -1063,
@@ -324,21 +287,14 @@ UnminedCustomMarkers = {
             image: "zoo.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.08,
-            text: "Sekisui Zoo",
+            english: "Sekisui Zoo",
+            japanese: "セキスイの動物園",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 20px Verdana,sans serif",
-        },
-
-        {
-            x: -844,
-            z: 721,
-            text: "Aquarium", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 22px Verdana,sans serif",
+            minZoom: 1,
         },
         {
             x: -844,
@@ -346,21 +302,14 @@ UnminedCustomMarkers = {
             image: "aquarium.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.08,
-            text: "Aquarium",
+            english: "Aquarium",
+            japanese: "水族館",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 20px Verdana,sans serif",
-        },
-
-        {
-            x: -1892,
-            z: 578,
-            text: "Integrity's Castle", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 22px Verdana,sans serif",
+            minZoom: 1,
         },
         {
             x: -1892,
@@ -368,21 +317,15 @@ UnminedCustomMarkers = {
             image: "castle.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.08,
-            text: "Integrity's Castle",
+            english: "Integrity's Castle",
+            japanese: "インテグリティの城",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 20px Verdana,sans serif",
-        },
-
-        {
-            x: -683,
-            z: -857,
-            text: "Juelsman's Village", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 22px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         {
             x: -683,
@@ -390,21 +333,15 @@ UnminedCustomMarkers = {
             image: "town.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.08,
-            text: "Juelsman's Village",
+            english: "Juelsman's Village",
+            japanese: "ジュールスマンの村",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 20px Verdana,sans serif",
-        },
-
-        {
-            x: 1373,
-            z: -9735,
-            text: "Christmas Town", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 22px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         {
             x: 1373,
@@ -412,20 +349,15 @@ UnminedCustomMarkers = {
             image: "town.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.08,
-            text: "Christmas Town",
+            english: "Christmas Town",
+            japanese: "クリスマスタウン",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 20px Verdana,sans serif",
-        },
-        {
-            x: 13771,
-            z: 542,
-            text: "Hitsuji Castle", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 22px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         {
             x: 13771,
@@ -433,21 +365,15 @@ UnminedCustomMarkers = {
             image: "japanesecastle.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.08,
-            text: "Hitsuji Castle",
+            english: "Hitsuji Castle",
+            japanese: "羊城",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 20px Verdana,sans serif",
-        },
-
-        {
-            x: 13808,
-            z: 649,
-            text: "Hitsuji Castle Town", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 20px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         {
             x: 13808,
@@ -455,21 +381,15 @@ UnminedCustomMarkers = {
             image: "japanesetown.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.06,
-            text: "Hitsuji Castle Town",
+            english: "Hitsuji Castle Town",
+            japanese: "羊城下町",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 18px Verdana,sans serif",
-        },
-
-        {
-            x: 13584,
-            z: 456,
-            text: "Hitsuji Village", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 20px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         {
             x: 13584,
@@ -477,44 +397,34 @@ UnminedCustomMarkers = {
             image: "japanesetown.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.06,
-            text: "Hitsuji Village",
+            english: "Hitsuji Village",
+            japanese: "羊村",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 18px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         
         //VILLAGES
-        {
-            x: 236,
-            z: 610,
-            text: "Village", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 18px Verdana,sans serif",
-        },
+        
         {
             x: 236,
             z: 610,
             image: "town.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "Village",
+            english: "Village",
+            japanese: "村",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 16px Verdana,sans serif",
-        },
-
-        {
-            x: 14455,
-            z: -224,
-            text: "Village", 
-            textColor: "#625717FF", 
-            offsetX: 0,
-            offsetY: 22, 
-            font: "bold 18px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         {
             x: 14455,
@@ -522,11 +432,15 @@ UnminedCustomMarkers = {
             image: "japanesetown.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "Village",
+            english: "Village",
+            japanese: "村",
             textColor: "#FFFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
             font: "bold 16px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
         },
         //Routes
         {
@@ -535,7 +449,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "1",
+            english: "1",
+            japanese: "1",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -547,7 +462,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "1",
+            english: "1",
+            japanese: "1",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -559,7 +475,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "1",
+            english: "1",
+            japanese: "1",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -571,7 +488,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "1",
+            english: "1",
+            japanese: "1",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -583,7 +501,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "1",
+            english: "1",
+            japanese: "1",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -595,7 +514,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "1",
+            english: "1",
+            japanese: "1",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -607,7 +527,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "1",
+            english: "1",
+            japanese: "1",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -620,7 +541,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "2",
+            english: "2",
+            japanese: "2",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -632,7 +554,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "2",
+            english: "2",
+            japanese: "2",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -644,7 +567,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "2",
+            english: "2",
+            japanese: "2",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -656,7 +580,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "2",
+            english: "2",
+            japanese: "2",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -669,7 +594,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "3",
+            english: "3",
+            japanese: "3",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -681,7 +607,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "3",
+            english: "3",
+            japanese: "3",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -693,7 +620,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "3",
+            english: "3",
+            japanese: "3",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -705,7 +633,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "3",
+            english: "3",
+            japanese: "3",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -717,7 +646,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "3",
+            english: "3",
+            japanese: "3",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -730,7 +660,8 @@ UnminedCustomMarkers = {
             image: "route.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            text: "4",
+            english: "4",
+            japanese: "4",
             textColor: "#FFFFFFF", 
             offsetX: 0,
             offsetY: -12,
@@ -743,7 +674,8 @@ UnminedCustomMarkers = {
             image: "FM.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.03,
-            text: "2",
+            english: "2",
+            japanese: "2",
             textColor: "#000000", 
             offsetX: 0,
             offsetY: -10,
@@ -755,7 +687,8 @@ UnminedCustomMarkers = {
             image: "FM.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.03,
-            text: "2",
+            english: "2",
+            japanese: "2",
             textColor: "#000000", 
             offsetX: 0,
             offsetY: -10,
@@ -767,7 +700,8 @@ UnminedCustomMarkers = {
             image: "FM.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.03,
-            text: "2",
+            english: "2",
+            japanese: "2",
             textColor: "#000000", 
             offsetX: 0,
             offsetY: -10,
@@ -780,7 +714,8 @@ UnminedCustomMarkers = {
             image: "FM.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.03,
-            text: "5",
+            english: "5",
+            japanese: "5",
             textColor: "#000000", 
             offsetX: 0,
             offsetY: -10,
@@ -792,7 +727,8 @@ UnminedCustomMarkers = {
             image: "FM.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.03,
-            text: "5",
+            english: "5",
+            japanese: "5",
             textColor: "#000000", 
             offsetX: 0,
             offsetY: -10,
@@ -804,8 +740,10 @@ UnminedCustomMarkers = {
         {
             x: -7,
             z: 2310,
-            text: "Firefly Lake", 
+            english: "Firefly Lake", 
+            japanese: "ホタル湖",
             textColor: "#FFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 0, 
             font: "bold 20px Verdana,sans serif",
@@ -814,8 +752,10 @@ UnminedCustomMarkers = {
         {
             x: -1051,
             z: 2996,
-            text: "Southern Ocean", 
+            english: "Southern Ocean",
+            japanese: "南極海",
             textColor: "#FFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 0, 
             font: "bold 20px Verdana,sans serif",
@@ -824,8 +764,10 @@ UnminedCustomMarkers = {
         {
             x: 76,
             z: 31,
-            text: "Mount Silver", 
+            english: "Mount Silver", 
+            japanese: "シルバー山",
             textColor: "#FFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 0, 
             font: "bold 20px Verdana,sans serif",
@@ -834,12 +776,30 @@ UnminedCustomMarkers = {
         {
             x: 13620,
             z: -37,
-            text: "Pigman Forest", 
+            english: "Pigman Forest", 
+            japanese: "ピッグマンの森",
             textColor: "#FFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 0, 
             font: "bold 20px Verdana,sans serif",
         },
+        
         // do not delete the following two closing brackets
     ]
+    ,
+    generateMarkers: function(language) {
+        return this.markersData.map(function(marker) {
+            const newMarker = Object.assign({}, marker);
+            // Set text based on selected language
+            newMarker.text = language === 'en' ? marker.english : marker.japanese;
+            // Delete the english and japanese properties to avoid confusion
+            delete newMarker.english;
+            delete newMarker.japanese;
+            return newMarker;
+        });
+    },
+
+    // Initial markers (English by default)
+    markers: []
 }
