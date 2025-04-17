@@ -323,6 +323,10 @@ class Unmined {
         this.updateGraticule();
         this.updateScaleBar();
         this.updateMarkersLayer();
+        this.olMap.on('moveend', () => {
+            this.updateMarkerVisibility();
+        });
+        this.updateMarkerVisibility();
         this.updatePlayerMarkersLayer();
         this.olMap.addControl(this.createContextMenu());
 
@@ -347,19 +351,47 @@ class Unmined {
     placeRedDotMarker(coordinates) {
         this.redDotMarker.setCoordinates(coordinates);
     }
-
+    updateMarkerVisibility() {
+        if (!this.olMap || !this.markersLayer) return;
+        
+        const currentZoom = this.olMap.getView().getZoom();
+        const mapZoomLevels = this.#options.maxZoom - this.#options.minZoom;
+        // Convert OpenLayers zoom to Minecraft world zoom
+        const worldZoom = -(mapZoomLevels - currentZoom) + this.#options.maxZoom;
+        
+        // Get all marker features
+        const features = this.markersLayer.getSource().getFeatures();
+        
+        // Loop through each feature and check if it should be visible at current zoom
+        features.forEach(feature => {
+            const minZoom = feature.get('minZoom');
+            const maxZoom = feature.get('maxZoom');
+            
+            let visible = true;
+            
+            if (minZoom !== undefined && worldZoom < minZoom) {
+                visible = false;
+            }
+            
+            if (maxZoom !== undefined && worldZoom > maxZoom) {
+                visible = false;
+            }
+            
+            feature.setStyle(visible ? feature.get('originalStyle') : null);
+        });
+    }
     createMarkersLayer(markers) {
         var features = [];
-
+    
         for (var i = 0; i < markers.length; i++) {
             var item = markers[i];
             var longitude = item.x;
             var latitude = item.z;
-
+    
             var feature = new ol.Feature({
                 geometry: new ol.geom.Point(ol.proj.transform([longitude, latitude], this.dataProjection, this.viewProjection))
             });
-
+    
             var style = new ol.style.Style();
             if (item.image)
                 style.setImage(new ol.style.Icon({
@@ -367,7 +399,7 @@ class Unmined {
                     anchor: item.imageAnchor,
                     scale: item.imageScale
                 }));
-
+    
             if (item.text) {
                 style.setText(new ol.style.Text({
                     text: item.text,
@@ -391,16 +423,27 @@ class Unmined {
                     }) : null,
                 }));
             }
-
+    
             feature.setStyle(style);
-
+            
+            
+            feature.set('originalStyle', style);
+            
+            
+            if (item.minZoom !== undefined) {
+                feature.set('minZoom', item.minZoom);
+            }
+            if (item.maxZoom !== undefined) {
+                feature.set('maxZoom', item.maxZoom);
+            }
+    
             features.push(feature);
         }
-
+    
         var vectorSource = new ol.source.Vector({
             features: features
         });
-
+    
         var vectorLayer = new ol.layer.Vector({
             source: vectorSource
         });
