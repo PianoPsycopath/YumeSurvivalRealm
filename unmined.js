@@ -405,9 +405,9 @@ class Unmined {
                 }));
             }
     
-            // Handle text - with or without drop shadow
+            
             if (item.text) {
-                // If drop shadow is requested, add it as the FIRST style (so it's rendered underneath)
+                
                 if (item.dropShadowColor) {
                     var shadowStyle = new ol.style.Style({
                         text: new ol.style.Text({
@@ -418,16 +418,16 @@ class Unmined {
                             fill: new ol.style.Fill({
                                 color: item.dropShadowColor
                             }),
-                            scale: 1.02, // Slightly larger shadow
+                            scale: 1.02, 
                             padding: item.textPadding ?? [2, 4, 2, 4],
                         })
                     });
                     
-                    // Add shadow style FIRST to ensure it's rendered behind main text
+                    
                     styles.push(shadowStyle);
                 }
                 
-                // Add main text style (always added, with or without shadow)
+                
                 mainStyle.setText(new ol.style.Text({
                     text: item.text,
                     font: item.font,
@@ -451,16 +451,16 @@ class Unmined {
                 }));
             }
             
-            // Add main style AFTER any shadow
+            
             styles.push(mainStyle);
             
-            // Set the feature style
+            
             feature.setStyle(styles);
             
-            // Store original styles for zoom visibility
+            
             feature.set('originalStyle', styles);
             
-            // Handle zoom levels
+            
             if (item.minZoom !== undefined) {
                 feature.set('minZoom', item.minZoom);
             }
@@ -684,7 +684,7 @@ class Unmined {
             }
             contextmenu.push('-');
     
-            // Add language toggle options with flag icons
+            
             const currentLanguage = window.currentLanguage || 'en';
             contextmenu.push({
                 classname: currentLanguage === 'en' ? 'menuitem-checked' : 'menuitem-unchecked',
