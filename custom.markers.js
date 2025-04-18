@@ -411,21 +411,151 @@ UnminedCustomMarkers = {
         //VILLAGES
         
         {
-            x: 236,
+            x: 144,
             z: 610,
             image: "town.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            english: "Village",
-            japanese: "村",
+            english: "Dolcratera",
+            japanese: "ドルクラテラ村",
             textColor: "#FFFFFFF", 
             dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
             offsetY: 20,
-            font: "bold 16px Verdana,sans serif",
+            font: "bold 20px Verdana,sans serif",
             minZoom:-2,
             maxZoom: 1,
         },
+
+        {
+            x: -230,
+            z: 2924,
+            image: "town.png",
+            imageAnchor: [0.5, 1],
+            imageScale: 0.05,
+            english: "Millcray",
+            japanese: "ミルクレイ村",
+            textColor: "#FFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
+            offsetX: 0,
+            offsetY: 20,
+            font: "bold 20px Verdana,sans serif",
+            minZoom:-2,
+            maxZoom: 1,
+        },
+                        {
+                            x: -233,
+                            z: 2888,
+                            image: "markers/thread.png",
+                            imageAnchor: [0.5, 1],
+                            imageScale: 0.07,
+                            english: "The Hide & Hem",
+                            japanese: "革と糸",
+                            textColor: "#FFFFFF", 
+                            dropShadowColor: "#625717FF", // Add this to enable drop shadow
+                            offsetX: 0,
+                            offsetY: 20,
+                            font: "bold 20px Verdana,sans serif",
+                            minZoom:2,
+                            maxZoom: 3,
+                        },
+                        {
+                            x: -229,
+                            z: 2902,
+                            image: "markers/food.png",
+                            imageAnchor: [0.5, 1],
+                            imageScale: 0.07,
+                            english: "The Hearth & Basket",
+                            japanese: "暖炉と籠",
+                            textColor: "#FFFFFF", 
+                            dropShadowColor: "#625717FF", // Add this to enable drop shadow
+                            offsetX: 0,
+                            offsetY: 20,
+                            font: "bold 20px Verdana,sans serif",
+                            minZoom:2,
+                            maxZoom: 3,
+                        },
+                        {
+                            x: -212,
+                            z: 2904,
+                            image: "markers/inn.png",
+                            imageAnchor: [0.5, 1],
+                            imageScale: 0.07,
+                            english: "The Wayfarer’s Respite",
+                            japanese: "旅人の憩い",
+                            textColor: "#FFFFFF", 
+                            dropShadowColor: "#625717FF", // Add this to enable drop shadow
+                            offsetX: 0,
+                            offsetY: 20,
+                            font: "bold 20px Verdana,sans serif",
+                            minZoom:2,
+                            maxZoom: 3,
+                        },
+                        {
+                            x: -211,
+                            z: 2921,
+                            image: "markers/mason.png",
+                            imageAnchor: [0.5, 1],
+                            imageScale: 0.07,
+                            english: "The Ember Brickworks",
+                            japanese: "火の煉瓦工房",
+                            textColor: "#FFFFFF", 
+                            dropShadowColor: "#625717FF", // Add this to enable drop shadow
+                            offsetX: 0,
+                            offsetY: 20,
+                            font: "bold 20px Verdana,sans serif",
+                            minZoom:2,
+                            maxZoom: 3,
+                        },
+                        {
+                            x: -212,
+                            z: 2943,
+                            image: "markers/jail.png",
+                            imageAnchor: [0.5, 1],
+                            imageScale: 0.07,
+                            english: "Jailhouse",
+                            japanese: "監禁所",
+                            textColor: "#FFFFFF", 
+                            dropShadowColor: "#625717FF", // Add this to enable drop shadow
+                            offsetX: 0,
+                            offsetY: 20,
+                            font: "bold 20px Verdana,sans serif",
+                            minZoom:2,
+                            maxZoom: 3,
+                        },
+                        {
+                            x: -230,
+                            z: 2940,
+                            image: "markers/mail.png",
+                            imageAnchor: [0.5, 1],
+                            imageScale: 0.07,
+                            english: "Post Office",
+                            japanese: "郵便局",
+                            textColor: "#FFFFFF", 
+                            dropShadowColor: "#625717FF", // Add this to enable drop shadow
+                            offsetX: 0,
+                            offsetY: 20,
+                            font: "bold 20px Verdana,sans serif",
+                            minZoom:2,
+                            maxZoom: 3,
+                        },
+                        {
+                            x: -236,
+                            z: 2977,
+                            image: "markers/armor.png",
+                            imageAnchor: [0.5, 1],
+                            imageScale: 0.07,
+                            english: "The Iron Maw Forge",
+                            japanese: "鉄の顎鍛冶場",
+                            textColor: "#FFFFFF", 
+                            dropShadowColor: "#625717FF", // Add this to enable drop shadow
+                            offsetX: 0,
+                            offsetY: 20,
+                            font: "bold 20px Verdana,sans serif",
+                            minZoom:2,
+                            maxZoom: 3,
+                        },
+
         {
             x: 14455,
             z: -224,
@@ -442,300 +572,6 @@ UnminedCustomMarkers = {
             minZoom:-2,
             maxZoom: 1,
         },
-        //Routes
-        {
-            x: -50,
-            z: -975,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "1",
-            japanese: "1",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: 50,
-            z: -100,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "1",
-            japanese: "1",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: 88,
-            z: -1967,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "1",
-            japanese: "1",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: 276,
-            z: -2926,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "1",
-            japanese: "1",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: 419,
-            z: -4125,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "1",
-            japanese: "1",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: -292,
-            z: -5103,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "1",
-            japanese: "1",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: 212,
-            z: -6041,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "1",
-            japanese: "1",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-
-        {
-            x: -361,
-            z: 513,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "2",
-            japanese: "2",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: -221,
-            z: 286,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "2",
-            japanese: "2",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: -671,
-            z: 649,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "2",
-            japanese: "2",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: -1313,
-            z: 673,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "2",
-            japanese: "2",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-
-        {
-            x: 147,
-            z: 230,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "3",
-            japanese: "3",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: 78,
-            z: 998,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "3",
-            japanese: "3",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: 300,
-            z: 1876,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "3",
-            japanese: "3",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: -123,
-            z: 2615,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "3",
-            japanese: "3",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-        {
-            x: -65,
-            z: 3342,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "3",
-            japanese: "3",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-
-        {
-            x: -252,
-            z: 3,
-            image: "route.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.05,
-            english: "4",
-            japanese: "4",
-            textColor: "#FFFFFFF", 
-            offsetX: 0,
-            offsetY: -12,
-            font: "20px Verdana,sans serif",
-        },
-
-        {
-            x: -19,
-            z: 1197,
-            image: "FM.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-            english: "2",
-            japanese: "2",
-            textColor: "#000000", 
-            offsetX: 0,
-            offsetY: -10,
-            font: "15px Verdana,sans serif",
-        },
-        {
-            x: -286,
-            z: 1165,
-            image: "FM.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-            english: "2",
-            japanese: "2",
-            textColor: "#000000", 
-            offsetX: 0,
-            offsetY: -10,
-            font: "15px Verdana,sans serif",
-        },
-        {
-            x: -693,
-            z: 1077,
-            image: "FM.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-            english: "2",
-            japanese: "2",
-            textColor: "#000000", 
-            offsetX: 0,
-            offsetY: -10,
-            font: "15px Verdana,sans serif",
-        },
-
-        {
-            x: -250,
-            z: 2651,
-            image: "FM.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-            english: "5",
-            japanese: "5",
-            textColor: "#000000", 
-            offsetX: 0,
-            offsetY: -10,
-            font: "15px Verdana,sans serif",
-        },
-        {
-            x: -554,
-            z: 2391,
-            image: "FM.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-            english: "5",
-            japanese: "5",
-            textColor: "#000000", 
-            offsetX: 0,
-            offsetY: -10,
-            font: "15px Verdana,sans serif",
-        },
-
-        
         //PLACE NAMES
         {
             x: -7,
@@ -747,6 +583,8 @@ UnminedCustomMarkers = {
             offsetX: 0,
             offsetY: 0, 
             font: "bold 20px Verdana,sans serif",
+            minZoom: 0,
+            maxZoom: 3,
         },
 
         {
@@ -759,6 +597,8 @@ UnminedCustomMarkers = {
             offsetX: 0,
             offsetY: 0, 
             font: "bold 20px Verdana,sans serif",
+            minZoom: -2,
+            maxZoom: 3,
         },
 
         {
@@ -771,6 +611,21 @@ UnminedCustomMarkers = {
             offsetX: 0,
             offsetY: 0, 
             font: "bold 20px Verdana,sans serif",
+            minZoom: 0,
+            maxZoom: 3,
+        },
+        {
+            x: 0,
+            z: 0,
+            english: "Central Continent", 
+            japanese: "中央大陸 ",
+            textColor: "#FFFFFF", 
+            dropShadowColor: "#625717FF", // Add this to enable drop shadow
+            offsetX: 0,
+            offsetY: 0, 
+            font: "bold 30px Verdana,sans serif",
+            minZoom: -6,
+            maxZoom: -3,
         },
 
         {
@@ -783,11 +638,13 @@ UnminedCustomMarkers = {
             offsetX: 0,
             offsetY: 0, 
             font: "bold 20px Verdana,sans serif",
+            minZoom: 0,
+            maxZoom: 3,
         },
         
         // do not delete the following two closing brackets
-    ]
-    ,
+    ],
+
     generateMarkers: function(language) {
         return this.markersData.map(function(marker) {
             const newMarker = Object.assign({}, marker);
@@ -803,3 +660,252 @@ UnminedCustomMarkers = {
     // Initial markers (English by default)
     markers: []
 }
+
+// Add this to your custom.markers.js file after your existing marker definitions
+
+// Define road segments with key positions and custom marker properties
+const roadSegments = {
+    "FM-5": {
+        icon: "FM.png",
+        textEn: "5",
+        textJa: "5",
+        textColor: "#000000",
+        scale: 0.03,
+        yOffset: -10,
+        font: "15px Verdana,sans serif",
+        keyPoints: [
+            {x: -250, z: 2651},  // Start point
+            {x: -220, z: 2590},  // Turn or intersection
+            {x: -200, z: 2570},  // Another key point
+            // Add more key points as needed
+        ]
+    },
+    "Route-3": {
+        icon: "route.png",
+        textEn: "1",
+        textJa: "1",
+        textColor: "#FFFFFF",
+        scale: 0.05,
+        yOffset: -12,
+        font: "20px Verdana,sans serif",
+        keyPoints: [
+            {x: -3, z: -37},
+            {x: 5, z: -80},
+            {x: 35, z: -94},
+            {x: 23, z: -230},
+            {x: 59, z: -275},
+            {x: 63, z: -345},
+            
+            {x: 27, z: -524},
+            {x: 0, z: -535},
+            {x: -16, z: -559},
+            {x: 3, z: -705},
+            {x: 32, z: -722},
+            {x: -59, z: -905},
+            {x: -84, z: -933},
+            {x: -52, z: -1023},
+            {x: -30, z: -1038},
+            {x: -2, z: -1233},
+            {x: -16, z: -1310},
+            {x: -38, z: -1329},
+            {x: -33, z: -1434},
+            {x: -77, z: -1446},
+            {x: -50, z: -1543},
+            {x: 40, z: -1681},
+            {x: 87, z: -1969},
+            {x: 114, z: -1989},
+            {x: 118, z: -2196},
+            {x: 95, z: -2233},
+            {x: 125, z: -2260},
+            {x: 171, z: -2267},
+            {x: 292, z: -2388},
+            {x: 294, z: -2448},
+            {x: 317, z: -2477},
+            {x: 333, z: -2481},
+            {x: 330, z: -2622},
+            {x: 296, z: -2647},
+            {x: 290, z: -2706},
+            {x: 254, z: -2788},
+            {x: 219, z: -2830},
+            {x: 270, z: -2885},
+            {x: 269, z: -2956},
+            {x: 224, z: -3007},
+            {x: 245, z: -3069},
+            {x: 243, z: -3209},
+            {x: 268, z: -3242},
+            {x: 260, z: -3270},
+            {x: 239, z: -3269},
+            {x: 256, z: -3383},
+            {x: 284, z: -3435},
+            {x: 289, z: -3471},
+            {x: 304, z: -3489},
+            {x: 307, z: -3595},
+            {x: 349, z: -3598},
+            {x: 349, z: -3625},
+            {x: 370, z: -3672},
+            {x: 351, z: -3704},
+            {x: 358, z: -3794},
+            {x: 450, z: -3827},
+            {x: 442, z: -4032},
+            {x: 413, z: -4139},
+            {x: 396, z: -4317},
+            {x: 305, z: -4425},
+            {x: 274, z: -4432},
+            {x: 255, z: -4471},
+            {x: 256, z: -4567},
+            {x: 173, z: -4570},
+            {x: 172, z: -4596},
+            {x: 98, z: -4598},
+            {x: 51, z: -4634},
+            {x: 40, z: -4660},
+            {x: 9, z: -4676},
+            {x: 14, z: -4697},
+            {x: 7, z: -4708},
+            {x: 8, z: -4736},
+            {x: 29, z: -4743},
+            {x: 30, z: -4891},
+            {x: -129, z: -5053},
+            {x: -209, z: -5044},
+            {x: -292, z: -5105},
+            {x: -292, z: -5137},
+            {x: -339, z: -5185},
+            {x: -339, z: -5228},
+            {x: -346, z: -5238},
+            {x: -346, z: -5255},
+            {x: -311, z: -5298},
+            {x: -256, z: -5310},
+            {x: -69, z: -5304},
+            {x: -50, z: -5360},
+            {x: 26, z: -5363},
+            {x: 78, z: -5468},
+            {x: 79, z: -5524},
+            {x: 71, z: -5540},
+            {x: 81, z: -5560},
+            {x: 98, z: -5572},
+            {x: 98, z: -5606},
+            {x: 113, z: -5631},
+            {x: 141, z: -5643},
+            {x: 176, z: -5705},
+            {x: 171, z: -5938},
+            {x: 209, z: -5976},
+            {x: 219, z: -6232},
+            {x: 189, z: -6269},
+            {x: 179, z: -6305},
+            {x: 136, z: -6311},
+            {x: 116, z: -6326},
+            // Add more points along the road
+        ]
+    }
+    // Add more roads as needed
+};
+
+// Configuration for different zoom levels
+const zoomLevelConfig = [
+    { minZoom: -6, maxZoom: -4, markerSpacing: 2000 },  // Far zoom - markers every 50 blocks
+    { minZoom: -3, maxZoom: -2, markerSpacing: 1000 },  // Medium zoom - markers every 25 blocks
+    { minZoom: -1, maxZoom: 1, markerSpacing: 500 },    // Close zoom - markers every 15 blocks
+    { minZoom: 2, maxZoom: 3, markerSpacing: 100 }    // Close zoom - markers every 15 blocks
+];
+
+// Function to calculate distance between two points
+function distance(point1, point2) {
+    const dx = point2.x - point1.x;
+    const dz = point2.z - point1.z;
+    return Math.sqrt(dx * dx + dz * dz);
+}
+
+// Function to interpolate points between two key points
+function interpolatePoints(point1, point2, spacing) {
+    const points = [];
+    const dist = distance(point1, point2);
+    
+    if (dist <= spacing) {
+        // If points are already close enough, just return them
+        return [point1, point2];
+    }
+    
+    // Calculate how many points to add between the two key points
+    const numPoints = Math.floor(dist / spacing);
+    
+    // Add interpolated points
+    for (let i = 0; i <= numPoints; i++) {
+        const ratio = i / numPoints;
+        const x = point1.x + (point2.x - point1.x) * ratio;
+        const z = point1.z + (point2.z - point1.z) * ratio;
+        points.push({x, z});
+    }
+    
+    return points;
+}
+
+// Function to generate road markers based on zoom levels
+function generateInterpolatedRoadMarkers() {
+    const dynamicMarkers = [];
+
+    Object.entries(roadSegments).forEach(([roadName, road]) => {
+        zoomLevelConfig.forEach(config => {
+            const { minZoom, maxZoom, markerSpacing } = config;
+
+            const path = road.keyPoints;
+            const distances = [];
+            let totalLength = 0;
+
+            // Precompute distances between keyPoints
+            for (let i = 0; i < path.length - 1; i++) {
+                const d = distance(path[i], path[i + 1]);
+                distances.push(d);
+                totalLength += d;
+            }
+
+            // Number of markers we want
+            const numMarkers = Math.floor(totalLength / markerSpacing);
+
+            // Walk the polyline at regular intervals
+            let currentSegment = 0;
+            let segmentStart = path[0];
+            let segmentEnd = path[1];
+            let segmentLength = distances[0];
+            let walked = 0;
+
+            for (let i = 0; i <= numMarkers; i++) {
+                const targetDist = i * markerSpacing;
+
+                while (walked + segmentLength < targetDist && currentSegment < path.length - 2) {
+                    walked += segmentLength;
+                    currentSegment++;
+                    segmentStart = path[currentSegment];
+                    segmentEnd = path[currentSegment + 1];
+                    segmentLength = distances[currentSegment];
+                }
+
+                const localDist = targetDist - walked;
+                const t = localDist / segmentLength;
+
+                const x = segmentStart.x + (segmentEnd.x - segmentStart.x) * t;
+                const z = segmentStart.z + (segmentEnd.z - segmentStart.z) * t;
+
+                dynamicMarkers.push({
+                    x, z,
+                    image: road.icon,
+                    imageAnchor: [0.5, 1],
+                    imageScale: road.scale,
+                    english: road.textEn,
+                    japanese: road.textJa,
+                    textColor: road.textColor,
+                    offsetX: 0,
+                    offsetY: road.yOffset,
+                    font: road.font,
+                    minZoom: minZoom,
+                    maxZoom: maxZoom
+                });
+            }
+        });
+    });
+
+    return dynamicMarkers;
+}
+
+
+// Add the generated road markers to your existing markers
+const interpolatedRoadMarkers = generateInterpolatedRoadMarkers();
+UnminedCustomMarkers.markersData = UnminedCustomMarkers.markersData.concat(interpolatedRoadMarkers);
