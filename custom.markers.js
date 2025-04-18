@@ -81,126 +81,8 @@ UnminedCustomMarkers = {
         //    offsetY: 0, 
         //    font: "bold 50px Calibri,sans serif",
         //},
-        {
-            x: -845,
-            z: 674,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: -1026,
-            z: 709,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: -852,
-            z: 866,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: -482,
-            z: 548,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: -275,
-            z: 519,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: -117,
-            z: 128,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: -12,
-            z: 2,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: -91,
-            z: -102,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: 12015,
-            z: -59,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: 13625,
-            z: 11,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: 13878,
-            z: 405,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: 15017,
-            z: -975,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: 5,
-            z: -523,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: 203,
-            z: -1635,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: 148,
-            z: -2283,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: 372,
-            z: -4380,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        {
-            x: 1404,
-            z: -9769,
-            image: "chasm.png",
-            imageAnchor: [0.5, 1],
-            imageScale: 0.03,
-        },
-        // SILVERTON
+        
+        // TOWNS
         {
             x: -97,
             z: 142,
@@ -642,7 +524,7 @@ UnminedCustomMarkers = {
             maxZoom: 3,
         },
         
-        // do not delete the following two closing brackets
+        
     ],
 
     generateMarkers: function(language) {
@@ -661,7 +543,7 @@ UnminedCustomMarkers = {
     markers: []
 }
 
-// Add this to your custom.markers.js file after your existing marker definitions
+
 
 // Define road segments with key positions and custom marker properties
 const roadSegments = {
@@ -680,7 +562,7 @@ const roadSegments = {
             // Add more key points as needed
         ]
     },
-    "Route-3": {
+    "Route-1": {
         icon: "route.png",
         textEn: "1",
         textJa: "1",
@@ -795,6 +677,29 @@ const roadSegments = {
             {x: 116, z: -6326},
             // Add more points along the road
         ]
+    },
+    "Route-3": {
+        icon: "route.png",
+        textEn: "3",
+        textJa: "3",
+        textColor: "#FFFFFF",
+        scale: 0.05,
+        yOffset: -12,
+        font: "20px Verdana,sans serif",
+        keyPoints: [
+            {x: 31, z: 153},
+            {x: 164, z: 245},
+            {x: 198, z: 289},
+            {x: 246, z: 325},
+            {x: 268, z: 382},
+            {x: 326, z: 423},
+            {x: 330, z: 461},
+            {x: 340, z: 506},
+            {x: 332, z: 548},
+            {x: 349, z: 598},
+            {x: 344, z: 668},
+            // Add more points along the road
+        ]
     }
     // Add more roads as needed
 };
@@ -905,7 +810,84 @@ function generateInterpolatedRoadMarkers() {
     return dynamicMarkers;
 }
 
+const markerTypes = {
+    "chasm": {
+        image: "chasm.png",
+        imageAnchor: [0.3, 0.3],
+        imageScale: 0.04,
+        minZoom: -2,
+        maxZoom: 3
+    },
+    "cave": {
+        image: "cave.png",
+        imageAnchor: [0.5, 1],
+        imageScale: 0.03,
+        minZoom: -2,
+        maxZoom: 3
+    }
+    
+};
+const markerCoordinates = {
+    "chasm": [
+        {x: -10, z: 1},//spawn
+        {x: -91, z: -109},//piano circuit
+        {x: -117, z: 122},//silverton
+        {x: -278, z: 503},//rianu
+        {x: -484, z: 537},//charo
+        {x: -855, z: 880},//air castle
+        {x: -823, z: 654},//aquarium
+        {x: -1060, z: 711},//sekisui
+        {x: -1998, z: 738},//integrity
+        {x: -2010, z: 295},
+        {x: -672, z: -794},//juelsman
+        {x: -5, z: -523},//route 1
+        {x: -203, z: -1635},
+        {x: 148, z: -2283},
+        {x: 371, z: -4380},
+        {x: 1404, z: -9772},
 
-// Add the generated road markers to your existing markers
+        {x: 3986, z: -12314},//1st pale garden
+
+        {x: 13623, z: 7},//pigman forest
+        {x: 13879, z: 403},//airs tower
+        {x: 13815, z: 572},//hitsuji castle
+
+        {x: 15067, z: -999},//airs pyramid
+
+        {x: 14513, z: 6801},//mansion
+    ],
+    "cave": [
+        
+    ]
+};
+function generateLocationMarkers() {
+    let generatedMarkers = [];
+    
+    // For each marker type
+    Object.entries(markerCoordinates).forEach(([type, coordinates]) => {
+        // Get the properties for this marker type
+        const props = markerTypes[type];
+        
+        // If we have properties defined and coordinates to use
+        if (props && coordinates && coordinates.length > 0) {
+            // Generate a marker for each coordinate
+            coordinates.forEach(coord => {
+                generatedMarkers.push({
+                    x: coord.x,
+                    z: coord.z,
+                    image: props.image,
+                    imageAnchor: props.imageAnchor,
+                    imageScale: props.imageScale,
+                    minZoom: props.minZoom,
+                    maxZoom: props.maxZoom
+                });
+            });
+        }
+    });
+    
+    return generatedMarkers;
+}
+
 const interpolatedRoadMarkers = generateInterpolatedRoadMarkers();
 UnminedCustomMarkers.markersData = UnminedCustomMarkers.markersData.concat(interpolatedRoadMarkers);
+UnminedCustomMarkers.markersData = UnminedCustomMarkers.markersData.concat(generateLocationMarkers());
