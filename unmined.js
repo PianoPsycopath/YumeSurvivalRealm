@@ -377,7 +377,8 @@ class Unmined {
                 visible = false;
             }
             
-            feature.setStyle(visible ? feature.get('originalStyle') : null);
+            
+            feature.setStyle(visible ? feature.get('originalStyle') : []);
         });
     }
     createMarkersLayer(markers) {
