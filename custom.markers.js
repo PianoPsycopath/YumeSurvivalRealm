@@ -315,8 +315,8 @@ UnminedCustomMarkers = {
             image: "town.png",
             imageAnchor: [0.5, 1],
             imageScale: 0.05,
-            english: "Millcray",
-            japanese: "ミルクレイ村",
+            english: "Sudmire Town",
+            japanese: "スドマイアタウン",
             textColor: "#FFFFFF", 
             dropShadowColor: "#625717FF", // Add this to enable drop shadow
             offsetX: 0,
